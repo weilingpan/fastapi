@@ -6,9 +6,17 @@
 
         <script src="/static/js/vars.js"></script>
         <script src="/static/js/index.js"></script>
+
+        <script>
+            $(document).ready(function(){
+              $("#send").click(function(){
+                console.log('Hello ' + $("#who").val());
+              })
+            });
+        </script>
     </head>
     <body>
-        <h1>Welcome Regina Page</h1>
+        <h1 id="title">Welcome Regina Page</h1>
 
         <label for="who">請輸入人名:</label>
         <input type="text" id="who" name="who">
