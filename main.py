@@ -34,6 +34,10 @@ async def path_param_example(pID: str):
 async def query_param_example(pID: str):
     return {"user": pID}
 
+@app.post("/hello/{who}")
+async def hello_who(who: str):
+    return {"welcome": who}
+
 #=========================== html ===========================
 @app.get("/home")
 def home(request: Request):
