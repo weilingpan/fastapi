@@ -5,7 +5,7 @@ router = APIRouter(tags=['客製Router1'],
 
 @router.get("/users/")
 async def read_users():
-    return [{"username": "Foo"}, {"username": "Bar"}]
+    return [{"username": "Amy"}, {"username": "John"}]
 
 @router.get("/")
 def hello_world():

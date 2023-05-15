@@ -1,1 +1,2 @@
 - jQuery 取值/設值 及 新增/刪除: https://ithelp.ithome.com.tw/articles/10197059
+- 建立 favicon.ico: https://www.favicon.cc/
