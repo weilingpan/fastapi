@@ -56,3 +56,8 @@ div.content {margin-left: 0;}
     float: none;
 }
 }
+
+.footer{
+    margin-left: 230px;
+    height: 50px;
+}
