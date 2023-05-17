@@ -40,12 +40,12 @@
                 console.log('axios success', res.data)
                 // const txtinfos = res.data.answer.choices.map((item) => {  return item.message.content })
                 // $('#Message').text(txtinfos)
-                elements.outputText.text("Echo: "+ who);
             })
             .catch(function(error) {
                 console.log(error);
             })
             .finally(() => {
+                elements.outputText.text("Echo: "+ who);
                 console.log('axios finally');
                 $.unblockUI();
                 handleSave()
@@ -60,6 +60,7 @@
 
     const handleSave = () => {
         console.log('handleSave')
+
         var date = new Date();
 
         // append 往下加, prepend 往上加
@@ -67,9 +68,12 @@
             `<div class="row records">
                 <div class="col"><input type="checkbox" class="status"></div>
                 <div class="col"><p>${date.toLocaleString()}</p></div>
-                <div class="col"><p>${elements.inputText.val()}</p></div>
+                <div class="col recordInput"><p>${elements.inputText.val()}</p></div>
                 <div class="col"><p>${elements.outputText.val()}</p></div>
-                <div class="col"><button class="delete btn btn-light">Delete</button><button class="copy btn btn-light">Copy</button></div>
+                <div class="col"><button class="delete btn btn-light">Delete</button>
+                <button class="copyInput btn btn-light">CopyInput</button>
+                <button class="copyOutput btn btn-light">CopyOutput</button>
+                <button class="reInput btn btn-light">重新提問</button></div>
             </div>`
           );
 
@@ -80,6 +84,16 @@
                 $(this).closest('.records').remove(); 
             })
         })
+
+        // $(".reInput").each(function(){
+        //     handleClear()
+        //     $(this).click(function(){
+        //         txt = $(this).closest('.records')
+        //         console.log(txt)
+        //         console.log(txt[0].outerText)
+        //         // elements.inputText.val('reInput')
+        //     })
+        // })
 
         // elements.inputText.clone().insertAfter($('#i-history'))
         // elements.outputText.clone().insertAfter($('#o-history'))
