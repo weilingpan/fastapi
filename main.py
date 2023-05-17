@@ -34,15 +34,19 @@ async def path_param_example(pID: str):
 async def query_param_example(pID: str):
     return {"user": pID}
 
-@app.post("/hello/{who}")
-async def hello_who(who: str):
-    return {"welcome": who}
+@app.post("/echo/{input}")
+async def echo(input: str):
+    return {"input": input}
 
 #=========================== html ===========================
 @app.get("/home")
 def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
-    
+
+@app.get("/about")
+def about(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
+
 
 if __name__ == "__main__":
     uvicorn.run(app, port=8080, host='0.0.0.0')
